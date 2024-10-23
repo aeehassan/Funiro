@@ -59,7 +59,7 @@
 	display: none;
 }
 .hero {
-	background-image: url("./visuals/images/Hero.svg"); /*File names are case sensitive*/
+	background-image: url("./visuals/images/hero.svg"); /*File names are case sensitive*/
 	height: 115vh;
 	width: 100vw;
 	background-repeat: no-repeat;
