@@ -1,0 +1,1 @@
+Responsiveness of the browse the range section

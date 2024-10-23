@@ -1,520 +1,596 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Furniro</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="shortcut icon"
-      href="./visuals/icons/logo.svg"
-      type="image/x-icon"
-    />
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Furniro</title>
+		<link rel="stylesheet" href="style.css" />
+		<!--External Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
 
-  <body>
-    <nav>
-      <div class="nav-content">
-        <div class="logo">
-          <img src="./visuals/icons/logo.svg" />
-          <p class="logoText">Furniro</p>
-        </div>
-        <div class="links">
-          <a href="#">Home</a>
-          <a href="#">Shop</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-        </div>
-        <div class="icons">
-          <img src="./visuals/icons/profile.svg" />
-          <img src="./visuals/icons//search.svg" />
-          <img src="./visuals/icons//favourite.svg" />
-          <img src="./visuals/icons//cart.svg" />
-        </div>
-      </div>
-    </nav>
-    <div class="hero">
-      <div class="hero-content">
-        <p class="hero-text1">New Arrival</p>
-        <p class="hero-text2">
-          Discover Our <br />
-          New Collection
-        </p>
-        <p class="hero-text3">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut <br />
-          elit tellus, luctus nec ullamcorper mattis.
-        </p>
-        <div>
-          <button class="hero-btn">BUY NOW</button>
-        </div>
-      </div>
-    </div>
-    <!-- Second section -->
+		<link
+			rel="shortcut icon"
+			href="./visuals/icons/logo.svg"
+			type="image/x-icon"
+		/>
+		<script>
+			/* Problem: make the scrollbar aligned at the middle by default */
+			/* Problem: I can't align this container to the center */
+			// This is where Javascript came to the rescue
+			window.onload = function () {
+				const container = document.querySelector(".sample-setups");
+				const middlePosition =
+					(container.scrollWidth - container.clientWidth) / 2;
+				container.scrollLeft = middlePosition;
+			};
+		</script>
+	</head>
+	<body>
+		<nav>
+			<div class="nav-content">
+				<div class="logo">
+					<img src="./visuals/icons/logo.svg" />
+					<p class="logoText">Furniro</p>
+				</div>
+				<div class="links">
+					<a href="#">Home</a>
+					<a href="#">Shop</a>
+					<a href="#">About</a>
+					<a href="#">Contact</a>
+				</div>
+				<div class="icons">
+					<img src="./visuals/icons/profile.svg" />
+					<img src="./visuals/icons//search.svg" />
+					<img src="./visuals/icons//favourite.svg" />
+					<img src="./visuals/icons//cart.svg" />
+				</div>
+				<img
+					src="visuals/icons/hamburger.svg"
+					alt="hamburger"
+					width="28px"
+					height="28px"
+				/>
+			</div>
+		</nav>
+		<div class="hero">
+			<div class="hero-content">
+				<p class="hero-text1">New Arrival</p>
+				<p class="hero-text2">
+					Discover Our <br />
+					New Collection
+				</p>
+				<p class="hero-text3">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut <br />
+					elit tellus, luctus nec ullamcorper mattis.
+				</p>
+				<div>
+					<button class="hero-btn">BUY NOW</button>
+				</div>
+			</div>
+		</div>
 
-    <div class="second-section">
-      <div id="top-second-section">
-        <h2>Browse The Range</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div id="bottom-second-section" class="rooms">
-        <div>
-          <img src="./visuals/images/rooms/Dining.svg" alt="Dining" />
-          <p class="title">Dining</p>
-        </div>
-        <div>
-          <img
-            src="./visuals/images/rooms/Image-living room.svg"
-            alt="Living"
-          />
-          <p class="title">Living</p>
-        </div>
-        <div>
-          <img src="./visuals/images/rooms/Bedroom.svg" alt="Bedroom" />
-          <p class="title">Bedroom</p>
-        </div>
-        <div>
-          <img src="./visuals/images/rooms/Bedroom.svg" alt="Bedroom" />
-          <p class="title">Bedroom</p>
-        </div>
-        <div>
-          <img src="./visuals/images/rooms/Bedroom.svg" alt="Bedroom" />
-          <p class="title">Bedroom</p>
-        </div>
-        <div>
-          <img src="./visuals/images/rooms/Bedroom.svg" alt="Bedroom" />
-          <p class="title">Bedroom</p>
-        </div>
-      </div>
-    </div>
+		<!-- Second section -->
+		<!-- Problem: I want to make it such that when
+	 the screensize becomes small or less, you can only 
+	 see one image with its title the scroll to see the rest -->
 
-    <!-- Third section: Our products -->
+		<!-- RESOLVED -->
+		<div class="second-section">
+			<div id="top-second-section">
+				<h2>Browse The Range</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+			<!-- Problem: I also want it to be as wide as a percentage of it's parent
+			 container probably for bigger screen to maintain consistency with the size 
+			 of each of the sections-->
+			<!-- RESOLVED with CSS -->
+			<div id="bottom-second-section">
+				<div class="room-container">
+					<div>
+						<img src="./visuals/images/rooms/Dining.svg" alt="Dining" />
+					</div>
+					<p class="title">Dining</p>
+				</div>
+				<div class="room-container">
+					<div>
+						<img
+							src="./visuals/images/rooms/Image-living room.svg"
+							alt="Living"
+						/>
+					</div>
+					<p class="title">Living</p>
+				</div>
+				<div class="room-container">
+					<div>
+						<img src="./visuals/images/rooms/Bedroom.svg" alt="Bedroom" />
+					</div>
+					<p class="title">Bedroom</p>
+				</div>
+				<div class="room-container">
+					<div>
+						<img src="./visuals/images/rooms/Bedroom.svg" alt="Bedroom" />
+					</div>
+					<p class="title">Bedroom</p>
+				</div>
+				<div class="room-container">
+					<div>
+						<img src="./visuals/images/rooms/Bedroom.svg" alt="Bedroom" />
+					</div>
+					<p class="title">Bedroom</p>
+				</div>
+				<div class="room-container">
+					<div>
+						<img src="./visuals/images/rooms/Bedroom.svg" alt="Bedroom" />
+					</div>
+					<p class="title">Bedroom</p>
+				</div>
+			</div>
+		</div>
 
-    <div class="third-section">
-      <h2>Our Products</h2>
+		<!-- Third section: Our products -->
 
-      <div id="products">
-        <div class="product-card" id="product-card-1">
-          <div class="product-card-default">
-            <img
-              src="visuals/images/products/Syltherine.png"
-              alt="Syltherine"
-            />
-            <img src="visuals/images/products/Offers/-30%.svg" alt="Offers" />
-            <div class="info">
-              <h3 class="product-name">Syltherine</h3>
-              <h4 class="product-info">Stylish cafe chair</h4>
-              <div class="price-tag">
-                <h3>Rp 2.500.000</h3>
-                <h4>Rp 3.500.000</h4>
-              </div>
-            </div>
-          </div>
+		<div class="third-section">
+			<h2>Our Products</h2>
 
-          <div class="product-card-hover-container">
-            <div class="product-card-hover">
-              <div class="controls">
-                <button>Add to cart</button>
-                <div class="icons">
-                  <div class="icon-group">
-                    <img src="visuals/icon-group/share.svg" alt="Share" />
-                    <b>Share</b>
-                  </div>
-                  <div class="icon-group">
-                    <img
-                      src="visuals/icon-group/compare-svgrepo-com 1.svg"
-                      alt="Compare"
-                    />
-                    <b>Compare</b>
-                  </div>
-                  <div class="icon-group">
-                    <img src="visuals/icon-group/like.svg" alt="Like" />
-                    <b>Like</b>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product-card" id="product-card-2">
-          <div class="product-card-default">
-            <img src="visuals/images/products/Lolito.svg" alt="Lolito" />
-            <img src="visuals/images/products/Offers/-50%.svg" alt="Offers" />
-            <div class="info">
-              <h3 class="product-name">Lolito</h3>
-              <h4 class="product-info">Luxury big sofa</h4>
-              <div class="price-tag">
-                <h3>Rp 7.000.000</h3>
-                <h4>Rp 14.000.000</h4>
-              </div>
-            </div>
-          </div>
-          <div class="product-card-hover-container">
-            <div class="product-card-hover">
-              <div class="controls">
-                <button>Add to cart</button>
-                <div class="icons">
-                  <div class="icon-group">
-                    <img src="visuals/icon-group/share.svg" alt="Share" />
-                    <b>Share</b>
-                  </div>
-                  <div class="icon-group">
-                    <img
-                      src="visuals/icon-group/compare-svgrepo-com 1.svg"
-                      alt="Compare"
-                    />
-                    <b>Compare</b>
-                  </div>
-                  <div class="icon-group">
-                    <img src="visuals/icon-group/like.svg" alt="Like" />
-                    <b>Like</b>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product-card" id="product-card-3">
-          <div class="product-card-default">
-            <img src="visuals/images/products/Leviosa.svg" alt="Leviosa" />
-            <div class="info">
-              <h3 class="product-name">Leviosa</h3>
-              <h4 class="product-info">Stylish cafe chair</h4>
-              <div class="price-tag">
-                <h3>Rp 2.500.000</h3>
-              </div>
-            </div>
-          </div>
-          <div class="product-card-hover-container">
-            <div class="product-card-hover">
-              <div class="controls">
-                <button>Add to cart</button>
-                <div class="icons">
-                  <div class="icon-group">
-                    <img src="visuals/icon-group/share.svg" alt="Share" />
-                    <b>Share</b>
-                  </div>
-                  <div class="icon-group">
-                    <img
-                      src="visuals/icon-group/compare-svgrepo-com 1.svg"
-                      alt="Compare"
-                    />
-                    <b>Compare</b>
-                  </div>
-                  <div class="icon-group">
-                    <img src="visuals/icon-group/like.svg" alt="Like" />
-                    <b>Like</b>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product-card" id="product-card-4">
-          <div class="product-card-default">
-            <img src="visuals/images/products/Respira.svg" alt="Respira" />
-            <img src="visuals/images/products/Offers/new.svg" alt="Offers" />
-            <div class="info">
-              <h3 class="product-name">Respira</h3>
-              <h4 class="product-info">Outdoor bar table and stool</h4>
-              <div class="price-tag">
-                <h3>Rp 500.000</h3>
-              </div>
-            </div>
-          </div>
-          <div class="product-card-hover-container">
-            <div class="product-card-hover">
-              <div class="controls">
-                <button>Add to cart</button>
-                <div class="icons">
-                  <div class="icon-group">
-                    <img src="visuals/icon-group/share.svg" alt="Share" />
-                    <b>Share</b>
-                  </div>
-                  <div class="icon-group">
-                    <img
-                      src="visuals/icon-group/compare-svgrepo-com 1.svg"
-                      alt="Compare"
-                    />
-                    <b>Compare</b>
-                  </div>
-                  <div class="icon-group">
-                    <img src="visuals/icon-group/like.svg" alt="Like" />
-                    <b>Like</b>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product-card" id="product-card-5">
-          <div class="product-card-default">
-            <img src="visuals/images/products/Grifo.svg" alt="Grifo" />
-            <div class="info">
-              <h3 class="product-name">Grifo</h3>
-              <h4 class="product-info">Night lamp</h4>
-              <div class="price-tag">
-                <h3>Rp 1.500.000</h3>
-              </div>
-            </div>
-          </div>
-          <div class="product-card-hover-container">
-            <div class="product-card-hover">
-              <div class="controls">
-                <button>Add to cart</button>
-                <div class="icons">
-                  <div class="icon-group">
-                    <img src="visuals/icon-group/share.svg" alt="Share" />
-                    <b>Share</b>
-                  </div>
-                  <div class="icon-group">
-                    <img
-                      src="visuals/icon-group/compare-svgrepo-com 1.svg"
-                      alt="Compare"
-                    />
-                    <b>Compare</b>
-                  </div>
-                  <div class="icon-group">
-                    <img src="visuals/icon-group/like.svg" alt="Like" />
-                    <b>Like</b>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product-card" id="product-card-6">
-          <div class="product-card-default">
-            <img src="visuals/images/products/Muggo.svg" alt="Muggo" />
-            <img src="visuals/images/products/Offers/new.svg" alt="Offers" />
-            <div class="info">
-              <h3 class="product-name">Muggo</h3>
-              <h4 class="product-info">Small mug</h4>
-              <div class="price-tag">
-                <h3>Rp 150.000</h3>
-              </div>
-            </div>
-          </div>
-          <div class="product-card-hover-container">
-            <div class="product-card-hover">
-              <div class="controls">
-                <button>Add to cart</button>
-                <div class="icons">
-                  <div class="icon-group">
-                    <img src="visuals/icon-group/share.svg" alt="Share" />
-                    <b>Share</b>
-                  </div>
-                  <div class="icon-group">
-                    <img
-                      src="visuals/icon-group/compare-svgrepo-com 1.svg"
-                      alt="Compare"
-                    />
-                    <b>Compare</b>
-                  </div>
-                  <div class="icon-group">
-                    <img src="visuals/icon-group/like.svg" alt="Like" />
-                    <b>Like</b>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product-card" id="product-card-7">
-          <div class="product-card-default">
-            <img src="visuals/images/products/Pingky.svg" alt="Pingky" />
-            <img src="visuals/images/products/Offers/-50%.svg" alt="Offers" />
-            <div class="info">
-              <h3 class="product-name">Pingky</h3>
-              <h4 class="product-info">Cute bed set</h4>
-              <div class="price-tag">
-                <h3>Rp 7.000.000</h3>
-                <h4>Rp 14.000.000</h4>
-              </div>
-            </div>
-          </div>
-          <div class="product-card-hover-container">
-            <div class="product-card-hover">
-              <div class="controls">
-                <button>Add to cart</button>
-                <div class="icons">
-                  <div class="icon-group">
-                    <img src="visuals/icon-group/share.svg" alt="Share" />
-                    <b>Share</b>
-                  </div>
-                  <div class="icon-group">
-                    <img
-                      src="visuals/icon-group/compare-svgrepo-com 1.svg"
-                      alt="Compare"
-                    />
-                    <b>Compare</b>
-                  </div>
-                  <div class="icon-group">
-                    <img src="visuals/icon-group/like.svg" alt="Like" />
-                    <b>Like</b>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product-card" id="product-card-8">
-          <div class="product-card-default">
-            <img src="visuals/images/products/Potty.svg" alt="Potty" />
-            <img src="visuals/images/products/Offers/new.svg" alt="Offers" />
-            <div class="info">
-              <h3 class="product-name">Potty</h3>
-              <h4 class="product-info">Minimalist flower pot</h4>
-              <div class="price-tag">
-                <h3>Rp 500.000</h3>
-              </div>
-            </div>
-          </div>
-          <div class="product-card-hover-container">
-            <div class="product-card-hover">
-              <div class="controls">
-                <button>Add to cart</button>
-                <div class="icons">
-                  <div class="icon-group">
-                    <img src="visuals/icon-group/share.svg" alt="Share" />
-                    <b>Share</b>
-                  </div>
-                  <div class="icon-group">
-                    <img
-                      src="visuals/icon-group/compare-svgrepo-com 1.svg"
-                      alt="Compare"
-                    />
-                    <b>Compare</b>
-                  </div>
-                  <div class="icon-group">
-                    <img src="visuals/icon-group/like.svg" alt="Like" />
-                    <b>Like</b>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+			<div id="products">
+				<div class="product-card" id="product-card-1">
+					<div class="product-card-default">
+						<img
+							src="visuals/images/products/Syltherine.png"
+							alt="Syltherine"
+						/>
+						<img src="visuals/images/products/Offers/-30%.svg" alt="Offers" />
+						<div class="info">
+							<h3 class="product-name">Syltherine</h3>
+							<h4 class="product-info">Stylish cafe chair</h4>
+							<div class="price-tag">
+								<h3>Rp 2.500.000</h3>
+								<h4>Rp 3.500.000</h4>
+							</div>
+						</div>
+					</div>
 
-      <div id="third-section-button">
-        <button id="show-more">Show More</button>
-      </div>
-    </div>
+					<div class="product-card-hover-container">
+						<div class="product-card-hover">
+							<div class="controls">
+								<button>Add to cart</button>
+								<div class="icons">
+									<div class="icon-group">
+										<img src="visuals/icon-group/share.svg" alt="Share" />
+										<b>Share</b>
+									</div>
+									<div class="icon-group">
+										<img
+											src="visuals/icon-group/compare-svgrepo-com 1.svg"
+											alt="Compare"
+										/>
+										<b>Compare</b>
+									</div>
+									<div class="icon-group">
+										<img src="visuals/icon-group/like.svg" alt="Like" />
+										<b>Like</b>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-    <div class="rooms-section">
-      <div class="text-section">
-        <div class="text">
-          <h1>50+ Beautiful rooms inspiration</h1>
-          <p>
-            Our designer already made a lot of beautiful prototype of rooms that
-            inspire you
-          </p>
-        </div>
-        <button>Explore More</button>
-      </div>
-      <div class="room-images">
-        <div class="current-image">
-          <img
-            src="visuals/rooms-section/Inner Peace.svg"
-            alt="current-image"
-          />
-          <div class="controls">
-            <div class="current-image-info">
-              <div class="top-text">
-                <span>01</span>
-                <img src="visuals/icons/Line.svg" alt="line" />
-                <span>Bed Room</span>
-              </div>
-              <div class="bottom-text">
-                <span>Inner Peace</span>
-              </div>
-            </div>
-            <img src="visuals/rooms-section/CTA.svg" alt="CTA" />
-          </div>
-        </div>
-        <div class="other-images">
-          <img src="visuals/rooms-section/Dining room.svg" alt="Dining room" />
-          <img src="visuals/rooms-section/Wardrobe.svg" alt="Wardrobe" />
-          <img src="visuals/rooms-section/Wardrobe.svg" alt="Wardrobe" />
-        </div>
-      </div>
-    </div>
+				<div class="product-card" id="product-card-2">
+					<div class="product-card-default">
+						<img src="visuals/images/products/Lolito.svg" alt="Lolito" />
+						<img src="visuals/images/products/Offers/-50%.svg" alt="Offers" />
+						<div class="info">
+							<h3 class="product-name">Lolito</h3>
+							<h4 class="product-info">Luxury big sofa</h4>
+							<div class="price-tag">
+								<h3>Rp 7.000.000</h3>
+								<h4>Rp 14.000.000</h4>
+							</div>
+						</div>
+					</div>
+					<div class="product-card-hover-container">
+						<div class="product-card-hover">
+							<div class="controls">
+								<button>Add to cart</button>
+								<div class="icons">
+									<div class="icon-group">
+										<img src="visuals/icon-group/share.svg" alt="Share" />
+										<b>Share</b>
+									</div>
+									<div class="icon-group">
+										<img
+											src="visuals/icon-group/compare-svgrepo-com 1.svg"
+											alt="Compare"
+										/>
+										<b>Compare</b>
+									</div>
+									<div class="icon-group">
+										<img src="visuals/icon-group/like.svg" alt="Like" />
+										<b>Like</b>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="product-card" id="product-card-3">
+					<div class="product-card-default">
+						<img src="visuals/images/products/Leviosa.svg" alt="Leviosa" />
+						<div class="info">
+							<h3 class="product-name">Leviosa</h3>
+							<h4 class="product-info">Stylish cafe chair</h4>
+							<div class="price-tag">
+								<h3>Rp 2.500.000</h3>
+							</div>
+						</div>
+					</div>
+					<div class="product-card-hover-container">
+						<div class="product-card-hover">
+							<div class="controls">
+								<button>Add to cart</button>
+								<div class="icons">
+									<div class="icon-group">
+										<img src="visuals/icon-group/share.svg" alt="Share" />
+										<b>Share</b>
+									</div>
+									<div class="icon-group">
+										<img
+											src="visuals/icon-group/compare-svgrepo-com 1.svg"
+											alt="Compare"
+										/>
+										<b>Compare</b>
+									</div>
+									<div class="icon-group">
+										<img src="visuals/icon-group/like.svg" alt="Like" />
+										<b>Like</b>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="product-card" id="product-card-4">
+					<div class="product-card-default">
+						<img src="visuals/images/products/Respira.svg" alt="Respira" />
+						<img src="visuals/images/products/Offers/new.svg" alt="Offers" />
+						<div class="info">
+							<h3 class="product-name">Respira</h3>
+							<h4 class="product-info">Outdoor bar table and stool</h4>
+							<div class="price-tag">
+								<h3>Rp 500.000</h3>
+							</div>
+						</div>
+					</div>
+					<div class="product-card-hover-container">
+						<div class="product-card-hover">
+							<div class="controls">
+								<button>Add to cart</button>
+								<div class="icons">
+									<div class="icon-group">
+										<img src="visuals/icon-group/share.svg" alt="Share" />
+										<b>Share</b>
+									</div>
+									<div class="icon-group">
+										<img
+											src="visuals/icon-group/compare-svgrepo-com 1.svg"
+											alt="Compare"
+										/>
+										<b>Compare</b>
+									</div>
+									<div class="icon-group">
+										<img src="visuals/icon-group/like.svg" alt="Like" />
+										<b>Like</b>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-    <div class="setup-section">
-      <div class="text">
-        <p>Share your setup with</p>
-        <h2>#FuniroFurniture</h2>
-      </div>
-      <div class="sample-setups">
-        <div class="side-section" id="left-section">
-          <!-- <img
-            src="visuals/images/sample-setups/left-section-1.svg"
-            alt="left-section"
-          />
-          <img
-            src="visuals/images/sample-setups/left-section-2.svg"
-            alt="left-section"
-          />
-          <img
-            src="visuals/images/sample-setups/left-section-3.svg"
-            alt="left-section"
-          />
-          <img
-            src="visuals/images/sample-setups/left-section-4.svg"
-            alt="left-section"
-          /> -->
-        </div>
-        <div id="middle-section">
-          <img
-            src="visuals/images/sample-setups/Middle-Dinining.svg"
-            alt="Middle"
-          />
-        </div>
-        <div class="side-section" id="right-section"></div>
-      </div>
-    </div>
-    <hr />
-    <div class="footer">
-      <div id="top-footer">
-        <div class="section" id="section-1">
-          <h2>Funiro.</h2>
-          <div id="address">
-            400 University Drive Suite 200 Coral <br />Gables, <br />FL 33134
-            USA
-          </div>
-        </div>
-        <div class="section" id="section-2">
-          <span>Links</span>
-          <a href="#">Home</a>
-          <a href="#">Shop</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-        </div>
-        <div class="section" id="section-3">
-          <span>Help</span>
-          <a href="#">Payment Options</a>
-          <a href="#">Returns</a>
-          <a href="#">Privacy policies</a>
-        </div>
-        <div class="section" id="section-4">
-          <span>Newsletter</span>
-          <div class="subscription">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter Your Email Address"
-            />
-            <button type="submit">SUBSCRIBE</button>
-          </div>
-        </div>
-      </div>
+				<div class="product-card" id="product-card-5">
+					<div class="product-card-default">
+						<img src="visuals/images/products/Grifo.svg" alt="Grifo" />
+						<div class="info">
+							<h3 class="product-name">Grifo</h3>
+							<h4 class="product-info">Night lamp</h4>
+							<div class="price-tag">
+								<h3>Rp 1.500.000</h3>
+							</div>
+						</div>
+					</div>
+					<div class="product-card-hover-container">
+						<div class="product-card-hover">
+							<div class="controls">
+								<button>Add to cart</button>
+								<div class="icons">
+									<div class="icon-group">
+										<img src="visuals/icon-group/share.svg" alt="Share" />
+										<b>Share</b>
+									</div>
+									<div class="icon-group">
+										<img
+											src="visuals/icon-group/compare-svgrepo-com 1.svg"
+											alt="Compare"
+										/>
+										<b>Compare</b>
+									</div>
+									<div class="icon-group">
+										<img src="visuals/icon-group/like.svg" alt="Like" />
+										<b>Like</b>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="product-card" id="product-card-6">
+					<div class="product-card-default">
+						<img src="visuals/images/products/Muggo.svg" alt="Muggo" />
+						<img src="visuals/images/products/Offers/new.svg" alt="Offers" />
+						<div class="info">
+							<h3 class="product-name">Muggo</h3>
+							<h4 class="product-info">Small mug</h4>
+							<div class="price-tag">
+								<h3>Rp 150.000</h3>
+							</div>
+						</div>
+					</div>
+					<div class="product-card-hover-container">
+						<div class="product-card-hover">
+							<div class="controls">
+								<button>Add to cart</button>
+								<div class="icons">
+									<div class="icon-group">
+										<img src="visuals/icon-group/share.svg" alt="Share" />
+										<b>Share</b>
+									</div>
+									<div class="icon-group">
+										<img
+											src="visuals/icon-group/compare-svgrepo-com 1.svg"
+											alt="Compare"
+										/>
+										<b>Compare</b>
+									</div>
+									<div class="icon-group">
+										<img src="visuals/icon-group/like.svg" alt="Like" />
+										<b>Like</b>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="product-card" id="product-card-7">
+					<div class="product-card-default">
+						<img src="visuals/images/products/Pingky.svg" alt="Pingky" />
+						<img src="visuals/images/products/Offers/-50%.svg" alt="Offers" />
+						<div class="info">
+							<h3 class="product-name">Pingky</h3>
+							<h4 class="product-info">Cute bed set</h4>
+							<div class="price-tag">
+								<h3>Rp 7.000.000</h3>
+								<h4>Rp 14.000.000</h4>
+							</div>
+						</div>
+					</div>
+					<div class="product-card-hover-container">
+						<div class="product-card-hover">
+							<div class="controls">
+								<button>Add to cart</button>
+								<div class="icons">
+									<div class="icon-group">
+										<img src="visuals/icon-group/share.svg" alt="Share" />
+										<b>Share</b>
+									</div>
+									<div class="icon-group">
+										<img
+											src="visuals/icon-group/compare-svgrepo-com 1.svg"
+											alt="Compare"
+										/>
+										<b>Compare</b>
+									</div>
+									<div class="icon-group">
+										<img src="visuals/icon-group/like.svg" alt="Like" />
+										<b>Like</b>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="product-card" id="product-card-8">
+					<div class="product-card-default">
+						<img src="visuals/images/products/Potty.svg" alt="Potty" />
+						<img src="visuals/images/products/Offers/new.svg" alt="Offers" />
+						<div class="info">
+							<h3 class="product-name">Potty</h3>
+							<h4 class="product-info">Minimalist flower pot</h4>
+							<div class="price-tag">
+								<h3>Rp 500.000</h3>
+							</div>
+						</div>
+					</div>
+					<div class="product-card-hover-container">
+						<div class="product-card-hover">
+							<div class="controls">
+								<button>Add to cart</button>
+								<div class="icons">
+									<div class="icon-group">
+										<img src="visuals/icon-group/share.svg" alt="Share" />
+										<b>Share</b>
+									</div>
+									<div class="icon-group">
+										<img
+											src="visuals/icon-group/compare-svgrepo-com 1.svg"
+											alt="Compare"
+										/>
+										<b>Compare</b>
+									</div>
+									<div class="icon-group">
+										<img src="visuals/icon-group/like.svg" alt="Like" />
+										<b>Like</b>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-      <div id="bottom-footer">
-        <span style="font-family: Poppins"
-          >2023 funiro. All rights reserved</span
-        >
-      </div>
-    </div>
-  </body>
+			<div id="third-section-button">
+				<button id="show-more">Show More</button>
+			</div>
+		</div>
+
+		<div class="rooms-section">
+			<div class="text-section">
+				<div class="text">
+					<h1>50+ Beautiful rooms inspiration</h1>
+					<p>
+						Our designer already made a lot of beautiful prototype of rooms that
+						inspire you
+					</p>
+				</div>
+				<button>Explore More</button>
+			</div>
+			<div class="room-images">
+				<div class="current-image">
+					<img
+						src="visuals/rooms-section/Inner Peace.svg"
+						alt="current-image"
+					/>
+					<div class="controls">
+						<div class="current-image-info">
+							<div class="top-text">
+								<span>01</span>
+								<img src="visuals/icons/Line.svg" alt="line" />
+								<span>Bed Room</span>
+							</div>
+							<div class="bottom-text">
+								<span>Inner Peace</span>
+							</div>
+						</div>
+						<img src="visuals/rooms-section/CTA.svg" alt="CTA" />
+					</div>
+				</div>
+				<div class="other-images">
+					<img src="visuals/rooms-section/Dining room.svg" alt="Dining room" />
+					<img src="visuals/rooms-section/Wardrobe.svg" alt="Wardrobe" />
+					<img src="visuals/rooms-section/Wardrobe.svg" alt="Wardrobe" />
+				</div>
+			</div>
+		</div>
+
+		<div class="setup-section">
+			<div class="text">
+				<p>Share your setup with</p>
+				<h2>#FuniroFurniture</h2>
+			</div>
+			<div class="sample-setups">
+				<div class="side-section" id="left-section">
+					<div class="top">
+						<img
+							src="visuals/images/sample-setups/left-section-1.svg"
+							alt="left-section"
+						/>
+						<img
+							src="visuals/images/sample-setups/left-section-2.svg"
+							alt="left-section"
+						/>
+					</div>
+					<div class="bottom">
+						<img
+							src="visuals/images/sample-setups/left-section-3.svg"
+							alt="left-section"
+						/>
+						<img
+							src="visuals/images/sample-setups/left-section-4.svg"
+							alt="left-section"
+						/>
+					</div>
+				</div>
+				<div id="middle-section">
+					<img
+						src="visuals/images/sample-setups/Middle-Dinining.svg"
+						alt="Middle"
+					/>
+				</div>
+				<div class="side-section" id="right-section">
+					<div class="top">
+						<img
+							src="visuals/images/sample-setups/right-section-1.svg"
+							alt=""
+						/>
+						<img
+							src="visuals/images/sample-setups/right-section-2.svg"
+							alt=""
+						/>
+					</div>
+					<div class="bottom">
+						<img
+							src="visuals/images/sample-setups/right-section-3.svg"
+							alt=""
+						/>
+						<img
+							src="visuals/images/sample-setups/right-section-4.svg"
+							alt=""
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<hr />
+
+		<div class="footer">
+			<div id="top-footer">
+				<div class="section" id="section-1">
+					<h2>Funiro.</h2>
+					<div id="address">
+						400 University Drive Suite 200 Coral <br />Gables, <br />FL 33134
+						USA
+					</div>
+				</div>
+				<div class="section" id="section-2">
+					<span>Links</span>
+					<a href="#">Home</a>
+					<a href="#">Shop</a>
+					<a href="#">About</a>
+					<a href="#">Contact</a>
+				</div>
+				<div class="section" id="section-3">
+					<span>Help</span>
+					<a href="#">Payment Options</a>
+					<a href="#">Returns</a>
+					<a href="#">Privacy policies</a>
+				</div>
+				<div class="section" id="section-4">
+					<span>Newsletter</span>
+					<div class="subscription">
+						<input
+							type="email"
+							name="email"
+							id="email"
+							placeholder="Enter Your Email Address"
+						/>
+						<button type="submit">SUBSCRIBE</button>
+					</div>
+				</div>
+			</div>
+
+			<div id="bottom-footer">
+				<span style="font-family: Poppins"
+					>2023 funiro. All rights reserved</span
+				>
+			</div>
+		</div>
+	</body>
 </html>
