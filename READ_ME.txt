@@ -1,1 +1,1 @@
-Responsiveness of the browse the range section
+The only thing left now is reseting from index.html to funiro.html
