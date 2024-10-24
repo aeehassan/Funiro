@@ -36,7 +36,7 @@
 	gap: 4vw;
 }
 
-.links a {
+.links > a {
 	text-decoration: none;
 	color: black;
 	font-size: 16px;
@@ -617,7 +617,7 @@ button[type="submit"]:hover {
 }
 @media (max-width: 1024px) {
 	#bottom-second-section .room-container > div {
-		width: calc((80vw / 2) - 25px);
+		width: calc((80vw / 2) - 24px);
 	}
 	.sample-setups {
 		max-width: 95vw;
@@ -656,7 +656,7 @@ button[type="submit"]:hover {
 }
 
 @media (max-width: 470px) {
-	.logo {
+	.nav-content > .logo {
 		gap: 1vw;
 	}
 	.hero-text1 {
@@ -692,7 +692,7 @@ button[type="submit"]:hover {
 		 see one image with its title the scroll to see the rest */
 
 	#bottom-second-section .room-container > div {
-		width: calc(80vw - 25px);
+		width: 80vw;
 	}
 	.rooms-section {
 		justify-content: flex-start;
