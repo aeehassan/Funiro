@@ -171,6 +171,10 @@
 #bottom-second-section .room-container > div > img {
 	width: 100%;
 }
+#bottom-second-section .room-container > div > img:hover {
+	opacity: 0.5;
+	cursor: pointer;
+}
 #bottom-second-section .room-container .title {
 	font-family: Poppins;
 	font-weight: 500;
@@ -461,6 +465,10 @@ Why was the width perfect*/
 	display: grid;
 	grid-template-columns: 2fr auto 2fr;
 	gap: 16px;
+}
+.sample-setups img:hover {
+	opacity: 0.5;
+	cursor: pointer;
 }
 #middle-section {
 	display: flex;
